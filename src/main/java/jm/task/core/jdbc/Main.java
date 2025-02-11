@@ -12,12 +12,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        SessionFactory sessionFactory = new Configuration()
-                .configure()
-                .addAnnotatedClass(User.class)
-                .buildSessionFactory();
+//        SessionFactory sessionFactory = new Configuration()
+//                .configure()
+//                .addAnnotatedClass(User.class)
+//                .buildSessionFactory();
 
-        UserDao userDao = new UserDaoHibernateImpl(sessionFactory);
+//        UserDao userDao = new UserDaoHibernateImpl(sessionFactory);
 
         UserService userService = new UserServiceImpl();
 
