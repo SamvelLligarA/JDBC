@@ -82,7 +82,6 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public List<User> getAllUsers() {
-
         Util connection = new Util();
         List<User> users = new ArrayList<>();
         try (Statement statement = connection.getConnection().createStatement();
