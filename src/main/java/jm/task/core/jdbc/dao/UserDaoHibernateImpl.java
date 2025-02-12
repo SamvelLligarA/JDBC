@@ -1,21 +1,21 @@
 package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.util.Util;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.internal.StandardServiceRegistryImpl;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
 
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-    public UserDaoHibernateImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public UserDaoHibernateImpl() {
+        this.sessionFactory = Util.getSessionFactory();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class UserDaoHibernateImpl implements UserDao {
                                    "id BIGINT AUTO_INCREMENT PRIMARY KEY," +
                                    "name VARCHAR(50)," +
                                    "last_name VARCHAR(50)," +
-                                   "age TINYINT" +
+                                   "age BIGINT" +
                                    ")").executeUpdate();
             transaction.commit();
             System.out.println("Таблица 'users' успешно создана или уже существует.");

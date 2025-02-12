@@ -14,8 +14,8 @@ import java.util.Properties;
 public class Util {
 
     private static final String USER = "root";
-    private static final String PASSWORD = "root";
-    private static final String URL = "jdbc:mysql://localhost:3306/db-kata";
+    private static final String PASSWORD = "password";
+    private static final String URL = "jdbc:mysql://localhost:3306/db_lerning";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     private final Connection connection;
 
